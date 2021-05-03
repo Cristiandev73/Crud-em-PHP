@@ -1,5 +1,6 @@
 <?php
-
+// Sessão
+session_start();
 // Cabeça
 include_once  'includes/header.php';
 ?>
