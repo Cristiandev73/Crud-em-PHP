@@ -50,7 +50,25 @@ include_once 'includes/header.php';
                         <td><?php echo $dados['email']; ?></td>
                         <td><?php echo $dados['idade']; ?></td>
                         <td><a href="editar.php?id=<?php echo $dados['id']; ?>" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
-                        <td><a href="" class="btn-floating red"><i class="material-icons">delete </i></a></td>
+                        <td><a href="#modal<?php echo $dados['id']; ?>" class="btn-floating red modal-trigger" ><i class="material-icons">delete </i></a></td>
+                    
+                    
+  <!-- Modal Structure -->
+  <div id="modal<?php echo $dados['id']; ?>" class="modal">
+    <div class="modal-content">
+      <h4>OPA,PERA AI !</h4>
+      <p> tem certeza, disso ?</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+      <form action = "php/action/delete.php" method="$_POST">
+      <input type="hidden" name ="id" value="<?php echo $dados['id']; ?>">
+      <button type="submit" name="btn-deletar" class="btn red">Sim,  esse é o meu desejo!</button>
+      </form>
+    </div>
+  </div>
+          
+                    
                     </tr>
                 <?php endwhile; ?>
             </tbody>
